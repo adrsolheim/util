@@ -18,7 +18,6 @@ idx=-1
 #for i in ${indices[@]}; do 
 #for i in {$len..1}; do
 for ((i=len; i>=1; i--)); do
-  echo $i
   if [[ "$1" == "${dirlist[$i]}" ]]; then
       idx=$i
       break
@@ -30,9 +29,6 @@ fi
 
 pathspaced=${dirlist[*]:0:$idx}
 final_path="/${pathspaced// //}"
-echo $final_path
 cd $final_path
-#c="$(tr -d '\r' <<< $path)"
-#od -c "$c"
 
 IFS=$ifs_tmp
