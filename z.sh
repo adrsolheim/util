@@ -2,7 +2,7 @@
 
 if [ "$#" -ne 1 ]; then
     echo "Invalid parameters. Provide a single directory as argument"
-    exit 1
+    return
 fi
 ifs_tmp=$IFS
 IFS='/' directories=($(pwd))
@@ -24,7 +24,7 @@ for ((i=len; i>=1; i--)); do
   fi
 done
 if [[ $idx == -1 ]]; then
-    exit 0
+    return
 fi
 
 pathspaced=${dirlist[*]:0:$idx}
