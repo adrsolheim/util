@@ -29,6 +29,13 @@ fi
 
 pathspaced=${dirlist[*]:0:$idx}
 final_path="/${pathspaced// //}"
+echo $final_path
 cd $final_path
+
+unset final_path
+unset dirlist
+unset final_path
+unset idx
+unset pathspaced
 
 IFS=$ifs_tmp
